@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cara Dekat Dengannya 💙</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      overflow:hidden;
+      background: linear-gradient(135deg, #4facfe, #00c6ff);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      text-align:center;
+    }
+
+    .container{
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding:40px;
+      border-radius:25px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+      width:90%;
+      max-width:500px;
+      position:relative;
+    }
+
+    h1{
+      font-size:32px;
+      margin-bottom:15px;
+    }
+
+    p{
+      font-size:18px;
+      margin-bottom:30px;
+    }
+
+    .stickers{
+      font-size:45px;
+      margin-bottom:20px;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0);}
+      50%{transform:translateY(-10px);}
+      100%{transform:translateY(0);}
+    }
+
+    button{
+      padding:14px 28px;
+      border:none;
+      border-radius:15px;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.2s;
+      position:relative;
+    }
+
+    #yesBtn{
+      background:white;
+      color:#0077ff;
+      margin-right:20px;
+      font-weight:bold;
+    }
+
+    #yesBtn:hover{
+      transform:scale(1.08);
+    }
+
+    #noBtn{
+      background:#1e3cff;
+      color:white;
+      position:absolute;
+    }
+
+    #message{
+      margin-top:30px;
+      font-size:22px;
+      font-weight:bold;
+      display:none;
+      animation: muncul 0.5s ease;
+    }
+
+    @keyframes muncul{
+      from{
+        opacity:0;
+        transform:scale(0.5);
+      }
+      to{
+        opacity:1;
+        transform:scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="stickers">💙✨😊🌸</div>
+
+    <h1>Cara Dekat Dengannya</h1>
+
+    <p>
+      Mau coba jadi lebih dekat dengannya? 😄
+    </p>
+
+    <button id="yesBtn">Iya 💙</button>
+    <button id="noBtn">Tidak 😅</button>
+
+    <div id="message">
+      Yeayyy 💙<br>
+      Mulailah dengan jadi diri sendiri, perhatian kecil,
+      dan sering ajak ngobrol santai 😊✨
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const message = document.getElementById("message");
+
+    // posisi awal tombol tidak
+    noBtn.style.left = "55%";
+    noBtn.style.top = "65%";
+
+    // tombol tidak kabur
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 80);
+
+      noBtn.style.position = "fixed";
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    // tombol iya ditekan
+    yesBtn.addEventListener("click", () => {
+      message.style.display = "block";
+
+      // efek tambahan
+      document.body.style.background =
+        "linear-gradient(135deg, #00b4ff, #0066ff)";
+    });
+  </script>
+
+</body>
+</html>
